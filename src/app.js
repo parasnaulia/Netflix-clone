@@ -48,10 +48,10 @@ app.post("/verification", (req, res) => {
   console.log("this is req.boy");
   // console.log(req.body);
   console.log("This is Verification called");
-  let verify = jwt.verify(req.body.token, "mynameisparasnauliafrombhimtal");
-  // console.log(verify);
+  let verify = jwt.verify(req.body.token, mynameisparasnauliafrombhimtal);
+  console.log(verify);
   if (verify) {
-    // res.json(verify);
+    res.json(verify);
   }
 });
 app.post("/login", async (req, res) => {

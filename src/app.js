@@ -79,7 +79,7 @@ app.post("/login", async (req, res) => {
   res.status(400).send("Sorry Somthing went Wrong");
 });
 app.get("/pp", (req, res) => {
-  res.send("PP");
+  return res.send("PP");
 });
 
 app.listen(9000, () => {

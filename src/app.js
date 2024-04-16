@@ -11,7 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 // console.log(process.env.SE);
 const jwtToken = jwt.sign(
   { name: "Paras", email: "parasnaulia645@gmail.com" },
-  process.env.SE
+  // process.env.SE
+  "mynameisparasnauliafrombhimtal"
 );
 console.log(jwtToken);
 //Now this Gernerated web token we have to send to cookie
@@ -33,7 +34,10 @@ app.post("/register", async (req, res) => {
   console.log("this is my register body");
   console.log(req.body);
 
-  let jwtToken = jwt.sign({ name: name, email: email }, process.env.SE);
+  let jwtToken = jwt.sign(
+    { name: name, email: email },
+    "mynameisparasnauliafrombhimtal"
+  );
   res.json({ newUSer, jwtToken });
   // res.send(data);
   const data = await newUSer.save();
@@ -44,10 +48,10 @@ app.post("/verification", (req, res) => {
   console.log("this is req.boy");
   // console.log(req.body);
   console.log("This is Verification called");
-  let verify = jwt.verify(req.body.token, process.env.SE);
-  console.log(verify);
+  let verify = jwt.verify(req.body.token, "mynameisparasnauliafrombhimtal");
+  // console.log(verify);
   if (verify) {
-    res.json(verify);
+    // res.json(verify);
   }
 });
 app.post("/login", async (req, res) => {

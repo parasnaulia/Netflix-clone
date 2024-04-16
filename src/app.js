@@ -68,8 +68,7 @@ app.post("/login", async (req, res) => {
     if (req.body.password === data.password) {
       let jwtToken = jwt.sign(
         { name: data.name, email: data.email },
-        "mynameisparasnauliafrombhimtal",
-        "git push -u origin main"
+        "mynameisparasnauliafrombhimtal"
       );
       // res.json({ newUSer, jwtToken });
       // console.log("correct Password")
